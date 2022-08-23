@@ -1,15 +1,18 @@
-import { MongoClient } from 'mongodb';
+//import { MongoClient } from 'mongodb';
+const MongoClient = require("mongodb");
 
 let client;
 
-export const initializeDbConnection = async () => {
-    client = await MongoClient.connect('mongodb://localhost:27017', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
-}
+const initializeDbConnection = async () => {
+  client = await MongoClient.connect("mongodb://localhost:27017", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+};
 
-export const getDbConnection = dbName => {
-    const db = client.db(dbName);
-    return db;
-}
+const getDbConnection = (dbName) => {
+  const db = client.db(dbName);
+  return db;
+};
+
+module.exports = { initializeDbConnection, getDbConnection };

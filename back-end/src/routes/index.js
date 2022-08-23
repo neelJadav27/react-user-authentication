@@ -1,5 +1,6 @@
-import { testRoute } from './testRoute';
+//import { testRoute } from './testRoute';
+const testRoute = require("./testRoute");
 
-export const routes = [
-    testRoute,
-];
+const routes = [testRoute];
+
+module.exports = routes;
